@@ -4,36 +4,35 @@
     <meta charset="UTF-8">
     <title>loom</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
   <body>
-    <div class="sample-toolbar">
-		<a href="javascript:void(0)" onclick="format('bold')"><span class="fa fa-bold fa-fw"></span></a>
-		<a href="javascript:void(0)" onclick="format('italic')"><span class="fa fa-italic fa-fw"></span></a>
-		<a href="javascript:void(0)" onclick="format('insertunorderedlist')"><span class="fa fa-list fa-fw"></span></a>
-		<a href="javascript:void(0)" onclick="setUrl()"><span class="fa fa-link fa-fw"></span></a>
-		<span><input id="txtFormatUrl" placeholder="url" class="form-control"></span>
+    
+    <div class="editor-container">
+      <div class="editor" id="editor" contenteditable="true"></div>
     </div>
-
-    <div class="editor" id="sampleeditor">
+    <div class="toolbar">
+      <div class="statusbar">
+        <span id="status">ready.</span>
+      </div>
+      <div class="buttons">
+        <button id="btnNew">
+          New
+        </button>
+        <button id="btnLoad">
+          Open
+        </button>
+        <button id="btnSave">
+          Save      
+        </button>
+      </div>
+      <div class=path>
+      	<span id="path" contenteditable="true">/home/drusr/loom/test.txt</span>
+      </div>
     </div>
-
-    <script>
-		window.addEventListener('load', function(){
-			document.getElementById('sampleeditor').setAttribute('contenteditable', 'true');
-			document.getElementById('sampleeditor2').setAttribute('contenteditable', 'true');
-        });
-
-		function format(command, value) {
-			document.execCommand(command, false, value);
-		}
-
-		function setUrl() {
-			var url = document.getElementById('txtFormatUrl').value;
-			var sText = document.getSelection();
-			document.execCommand('insertHTML', false, '<a href="' + url + '" target="_blank">' + sText + '</a>');
-			document.getElementById('txtFormatUrl').value = '';
-		}
-    </script>
+    
+    
+        <script>
+        	require('./app.js');
+        </script>
   </body>
 </html>

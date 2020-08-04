@@ -1,21 +1,59 @@
+html, body
+{
+  	height: 100%
+}
+.editor-container
+{
+  	display: flex;
+  	height: 90%
+}
 .editor
 {
-  border:solid 1px #ccc;
-  padding: 20px;
-  min-height:200px;
+  	flex: 1;
+  	border:solid 1px #ccc;
+  	padding: 20px;
+  	min-height:200px;
 }
-.sample-toolbar
+.toolbar
 {
-  border:solid 1px #ddd;
-  background:#f4f4f4;
-  padding: 5px;
-  border-radius:3px;
+  	border:solid 1px #ddd;
+  	background:#f4f4f4;
+  	padding: 7px;
+  	border-radius:3px;
 }
-.sample-toolbar > span
+.toolbar > span
 {
-  cursor:pointer;
+  	cursor:pointer;
+  	margin: 2px;
 }
-.sample-toolbar > span:hover
+.toolbar > span:hover
 {
-  text-decoration:underline;
+  	text-decoration:underline;
+}
+.statusbar > span::before
+{ 
+  	content: 'status: ';
+}
+.statusbar
+{ 
+	float: right;
+}
+.buttons
+{
+	float: left;
+	margin-right: 10px;
+}
+#span
+{
+	min-width: 300px;
+}
+.path > span
+{
+	background: #fff;
+	border: solid 1px #ddd;
+	padding: 5px;
+}
+path > span:hover
+{
+	text-decoration: none;
 }
