@@ -15,7 +15,8 @@ const createWindow = () => {
     height: 800,
     webPreferences: {
       nodeIntegration: true,
-      nodeIntegrationInWorker: true
+      nodeIntegrationInWorker: true,
+      enableRemoteModule: true
     }
   });
   mainWindow.setMenu(null);		
