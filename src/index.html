@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; connect-src 'self'; img-src 'self'; style-src 'self';base-uri 'self';form-action 'self'">
     <title>loom</title>
     <link rel="stylesheet" href="index.css">
   </head>
@@ -28,5 +28,6 @@
         </div>
       </div>
     </div>
+    <script>require("./app");</script>
   </body>
 </html>

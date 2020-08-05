@@ -1,6 +1,5 @@
 const fs = require("fs");
 const { dialog } = require("electron").remote;
-
 const stat = document.getElementById("status");
 const edit = document.getElementById("editor");
 const load = document.getElementById("btnLoad");
@@ -20,7 +19,7 @@ blank.addEventListener("click", () => {
 
 load.addEventListener("click", () => {
 	var path = pathField.innerText;
-	var data = fs.readFileSync( path, 'utf-8');
+	data = fs.readFileSync( path, 'utf-8');
 	edit.innerText = data; 
 	stat.innerText = "Loaded.";
 });
