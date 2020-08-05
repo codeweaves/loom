@@ -8,8 +8,13 @@ const save = document.getElementById("btnSave");
 const blank = document.getElementById("btnNew");
 const pathField = document.getElementById("path");
 
+//create structural elements for blank a file
+const newDiv = document.createElement("DIV");
+const newBr = document.createElement("BR");
+
 blank.addEventListener("click", () => {
 	edit.innerText = ""; 
+	edit.appendChild(newDiv).appendChild(newBr);
 	stat.innerText = "Ready.";
 });
 

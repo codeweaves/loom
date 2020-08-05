@@ -15,11 +15,24 @@ html, body
 .editor
 {
   	flex: 1;
-  	height: 100%;
+  	height: 100vh;
   	border:solid 1px #ccc;
-  	padding: 20px;
   	min-height:200px;
   	overflow: scroll;
+	counter-reset: line;
+	padding-top: 4px;
+}
+.editor > div::before
+{
+	counter-increment: line;
+	content: counter(line, decimal-leading-zero) " ";
+	postion: absolute;
+	margin-right: 8px;
+	padding: 4px;
+	border-right: solid #ccc;
+	background: #666;
+	color: #ccc;
+	text-align: center;
 }
 .toolbar
 {
@@ -65,3 +78,4 @@ path > span:hover
 {
 	text-decoration: none;
 }
+
