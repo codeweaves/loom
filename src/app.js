@@ -6,7 +6,8 @@ const edit = document.getElementById("editor");
 const load = document.getElementById("btnLoad");
 const save = document.getElementById("btnSave");
 const blank = document.getElementById("btnNew");
-var pathField = document.getElementById("path");
+const pathField = document.getElementById("path");
+
 blank.addEventListener("click", () => {
 	edit.innerText = ""; 
 	stat.innerText = "Ready.";
