@@ -20,7 +20,9 @@ blank.addEventListener("click", () => {
 	stat.innerText = "Ready.";
 });
 
-//load the contents of a file to the editor
+/*
+load the contents of a file to the editor
+*/
 load.addEventListener("click", () => {
 	fs.readFile(filePath, (err, data) => {
 		if (err) throw err;
@@ -29,7 +31,24 @@ load.addEventListener("click", () => {
 	stat.innerText = "Loaded.";
 });
 
-//save the editor contents to file
+/*
+//load #editor.innerHTML into mem
+//for each div in #editor
+//remove "<br>"
+//remove "<div>"
+//replace "</div>" with \r\n
+load.addEventListener("click", () => {
+	fs.readFile(filePath, (err, data) => {
+		if (err) throw err;
+		edit.innerText = data;
+	});
+	stat.innerText = "Loaded.";
+});
+*/
+
+/*
+//save the editor contents of innerText to file 
+*/
 save.addEventListener("click", () => {
  	let data = edit.innerText;
  	fs.writeFile(filePath, data, 'utf-8', (err) => {
@@ -38,6 +57,16 @@ save.addEventListener("click", () => {
  	});
 });
 
+/*
+//load #editor.innerHTML into mem
+//for each div in #editor
+//remove "<br>"
+//remove "<div>"
+//replace "</div>" with \r\n
+save.addEventListener("click", () => {
+ 	let data = edit.innerHTML;
+});
+*/
 //listen for changes in the editor
 edit.addEventListener("keydown", () => {
 	stat.innerText = "Changed.";
